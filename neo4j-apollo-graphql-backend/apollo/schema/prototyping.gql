@@ -1,0 +1,35 @@
+type Query {
+  dummy: [CurrencyAccount!]
+}
+
+type Drug {
+    name: String
+    dosageForm: String
+    alcoholWarning: String
+    foodWarning: String
+    # example of directionality in graphs, where the ontology is ambiguous: https://schema.org/study
+    subjectOfStudy: MedicalStudy @relationship(type: "RELATED_STUDY", direction: IN)
+    study: MedicalStudy @relationship(type: "RELATED_STUDY", direction: OUT)
+}
+
+type MedicalStudy {
+    name: String
+    studySubject: Drug @relationship(type: "STUDIED_SUBJECT", direction: OUT)
+    status: MedicalStudyStatus
+    # a related study as proposed here: https://schema.org/MedicalStudy
+    study: [MedicalStudy] @relationship(type: "RELATED_STUDY", direction: OUT)
+}
+
+# https://schema.org/MedicalStudyStatus
+enum MedicalStudyStatus {
+    ActiveNotRecruiting
+    Completed
+    EnrollingByInvitation
+    NotYetRecruiting
+    Recruiting
+    ResultsAvailable
+    ResultsNotAvailable
+    Suspended
+    Terminated
+    Withdrawn
+}
