@@ -1002,5 +1002,11 @@ export type GetAllDrugsQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetAllDrugsQueryQuery = { __typename?: 'Query', drugs: Array<{ __typename?: 'Drug', alcoholWarning?: string | null, dosageForm?: string | null, foodWarning?: string | null, name?: string | null }> };
 
+export type GetAllMedicalStudiesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllMedicalStudiesQuery = { __typename?: 'Query', medicalStudies: Array<{ __typename?: 'MedicalStudy', name?: string | null, status?: MedicalStudyStatus | null }> };
+
 
 export const GetAllDrugsQueryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getAllDrugsQuery"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"drugs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alcoholWarning"}},{"kind":"Field","name":{"kind":"Name","value":"dosageForm"}},{"kind":"Field","name":{"kind":"Name","value":"foodWarning"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]} as unknown as DocumentNode<GetAllDrugsQueryQuery, GetAllDrugsQueryQueryVariables>;
+export const GetAllMedicalStudiesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getAllMedicalStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"medicalStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"status"}}]}}]}}]} as unknown as DocumentNode<GetAllMedicalStudiesQuery, GetAllMedicalStudiesQueryVariables>;

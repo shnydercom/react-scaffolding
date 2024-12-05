@@ -15,6 +15,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 const documents = {
     "\n\tquery getAllDrugsQuery {\n\t\tdrugs {\n\t\t\talcoholWarning\n\t\t\tdosageForm\n\t\t\tfoodWarning\n\t\t\tname\n\t\t}\n\t}\n": types.GetAllDrugsQueryDocument,
+    "\n\tquery getAllMedicalStudies {\n\t\tmedicalStudies {\n\t\t\tname\n\t\t\tstatus\n\t\t}\n\t}\n": types.GetAllMedicalStudiesDocument,
 };
 
 /**
@@ -35,6 +36,10 @@ export function graphql(source: string): unknown;
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "\n\tquery getAllDrugsQuery {\n\t\tdrugs {\n\t\t\talcoholWarning\n\t\t\tdosageForm\n\t\t\tfoodWarning\n\t\t\tname\n\t\t}\n\t}\n"): (typeof documents)["\n\tquery getAllDrugsQuery {\n\t\tdrugs {\n\t\t\talcoholWarning\n\t\t\tdosageForm\n\t\t\tfoodWarning\n\t\t\tname\n\t\t}\n\t}\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n\tquery getAllMedicalStudies {\n\t\tmedicalStudies {\n\t\t\tname\n\t\t\tstatus\n\t\t}\n\t}\n"): (typeof documents)["\n\tquery getAllMedicalStudies {\n\t\tmedicalStudies {\n\t\t\tname\n\t\t\tstatus\n\t\t}\n\t}\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

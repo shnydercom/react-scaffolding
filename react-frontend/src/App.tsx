@@ -1,8 +1,8 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { AllDrugsList } from "./molecules/AllDrugsList";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { AllStudiesList } from "./molecules/AllStudiesList";
 
 const client = new ApolloClient({
   uri: "http://localhost:1212/graphql",
@@ -14,10 +14,13 @@ function App() {
     <ApolloProvider client={client}>
       <div className="App">
         <header className="App-header">
-          Header from create-react-app
+          Drugs and Studies CRUD
         </header>
         <section>
           <AllDrugsList />
+        </section>
+        <section>
+          <AllStudiesList />
         </section>
       </div>
     </ApolloProvider>
