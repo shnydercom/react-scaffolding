@@ -8,8 +8,7 @@ type Drug {
     alcoholWarning: String
     foodWarning: String
     # example of directionality in graphs, where the ontology is ambiguous: https://schema.org/study
-    subjectOfStudy: MedicalStudy @relationship(type: "RELATED_STUDY", direction: IN)
-    study: MedicalStudy @relationship(type: "RELATED_STUDY", direction: OUT)
+    subjectOfStudy: MedicalStudy @relationship(type: "STUDIED_SUBJECT", direction: IN)
 }
 
 type MedicalStudy {
@@ -17,7 +16,7 @@ type MedicalStudy {
     studySubject: Drug @relationship(type: "STUDIED_SUBJECT", direction: OUT)
     status: MedicalStudyStatus
     # a related study as proposed here: https://schema.org/MedicalStudy
-    study: [MedicalStudy] @relationship(type: "RELATED_STUDY", direction: OUT)
+    study: [MedicalStudy] @relationship(type: "PREVIOUS_STUDY", direction: OUT)
 }
 
 # https://schema.org/MedicalStudyStatus

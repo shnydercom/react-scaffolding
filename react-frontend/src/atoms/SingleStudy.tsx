@@ -6,7 +6,7 @@ interface SingleStudyProps {
  
 const SingleStudy: FunctionComponent<SingleStudyProps> = ({name}) => {
 	return ( <li>
-		{name}
+		{`Title: "${name}"`}
 	</li>);
 }
  
