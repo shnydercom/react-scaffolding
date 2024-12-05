@@ -12,4 +12,9 @@
 
 
 # CLI commands
+- a docker network needs to be created: `docker network create -d bridge prototyping-net`
+- when building the dockerfile, the tag needs to be `prototyping-apollo`
+- when the apollo endpoint is running, the code can be generated in react: `npm run generate`
+
+# used templates:
 - creation: `npx create-react-app react-frontend --template typescript`
